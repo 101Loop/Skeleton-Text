@@ -1,3 +1,8 @@
+///
+/// author: Mahen Gandhi <mahen.gandhi@civilmachines.com>
+/// github: https://github.com/imlegend19
+///
+
 library skeleton_text;
 
 import 'package:flutter/material.dart';
