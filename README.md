@@ -1,8 +1,12 @@
 # skeleton_text
 
-Skeleton Text package in Flutter.
+A package provides an easy way to add skeleton text loading animation in Flutter project
 
-## Getting Started
+<p>
+    <img src="skeleton_text.gif"/>
+</p>
+
+## How To Use
 
 This project is a starting point for a Dart
 [package](https://flutter.io/developing-packages/),
