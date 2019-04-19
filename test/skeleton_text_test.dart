@@ -13,5 +13,7 @@ void main() {
         height: 13.0,
       ),
     );
+
+    skeletonText.createElement();
   });
 }
