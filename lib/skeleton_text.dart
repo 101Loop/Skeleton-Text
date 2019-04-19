@@ -68,12 +68,10 @@ class _SkeletonAnimationState extends State<SkeletonAnimation>
             },
             child: DecoratedBox(
                 decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  widget.gradientColor,
-                  widget.shimmerColor,
-                ],
-              ),
+              gradient: LinearGradient(colors: [
+                widget.gradientColor,
+                widget.shimmerColor,
+              ]),
             )),
           ),
         ))
