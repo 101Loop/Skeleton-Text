@@ -14,6 +14,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.black,
         body: ListView.builder(
             scrollDirection: Axis.vertical,
             physics: BouncingScrollPhysics(),
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
                 child: Container(
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                      color: Colors.white70),
+                      color: index % 2 == 0 ? Colors.black : Colors.white54),
                   child: Container(
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,12 +33,15 @@ class MyApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         SkeletonAnimation(
+                          shimmerColor:
+                              index % 2 != 0 ? Colors.grey : Colors.white54,
+                          borderRadius: BorderRadius.circular(32),
                           child: Container(
                             width: 70.0,
                             height: 70.0,
                             decoration: BoxDecoration(
-                              color: Colors.grey[300],
-                            ),
+                                color: Colors.grey[300],
+                                borderRadius: BorderRadius.circular(32)),
                           ),
                         ),
                         Column(
@@ -49,6 +53,10 @@ class MyApp extends StatelessWidget {
                               padding: const EdgeInsets.only(
                                   left: 15.0, bottom: 5.0),
                               child: SkeletonAnimation(
+                                borderRadius: BorderRadius.circular(10.0),
+                                shimmerColor: index % 2 != 0
+                                    ? Colors.grey
+                                    : Colors.white54,
                                 child: Container(
                                   height: 15,
                                   width:
@@ -64,6 +72,10 @@ class MyApp extends StatelessWidget {
                               child: Padding(
                                 padding: const EdgeInsets.only(right: 5.0),
                                 child: SkeletonAnimation(
+                                  borderRadius: BorderRadius.circular(10.0),
+                                  shimmerColor: index % 2 != 0
+                                      ? Colors.grey
+                                      : Colors.white54,
                                   child: Container(
                                     width: 60,
                                     height: 13,

@@ -12,12 +12,14 @@ class SkeletonAnimation extends StatefulWidget {
   final Color shimmerColor;
   final Color gradientColor;
   final Curve curve;
+  final BorderRadiusGeometry borderRadius;
 
   SkeletonAnimation(
       {@required this.child,
       this.shimmerColor = Colors.white54,
       this.gradientColor = const Color.fromARGB(0, 244, 244, 244),
       this.curve = Curves.fastOutSlowIn,
+      this.borderRadius = const BorderRadius.all(Radius.circular(0)),
       Key key})
       : super(key: key);
 
@@ -53,10 +55,11 @@ class _SkeletonAnimationState extends State<SkeletonAnimation>
       children: <Widget>[
         widget.child,
         Positioned.fill(
-            child: ClipRect(
+            child: ClipRRect(
+          borderRadius: widget.borderRadius,
           child: AnimatedBuilder(
             animation: _controller,
-            builder: (context, child) {
+            builder: (BuildContext context, Widget child) {
               return FractionallySizedBox(
                 widthFactor: .2,
                 alignment: AlignmentGeometryTween(
@@ -67,12 +70,13 @@ class _SkeletonAnimationState extends State<SkeletonAnimation>
               );
             },
             child: DecoratedBox(
-                decoration: BoxDecoration(
-              gradient: LinearGradient(colors: [
-                widget.gradientColor,
-                widget.shimmerColor,
-              ]),
-            )),
+              decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+                  widget.gradientColor,
+                  widget.shimmerColor,
+                ]),
+              ),
+            ),
           ),
         ))
       ],
