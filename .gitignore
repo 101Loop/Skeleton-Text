@@ -12,4 +12,4 @@ ios/Runner/GeneratedPluginRegistrant.*
 .idea/
 example/pubspec.lock
 example/pubspec.lock
-.vscode/launch.json
+.vscode/
