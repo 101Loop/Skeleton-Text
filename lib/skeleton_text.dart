@@ -27,8 +27,7 @@ class SkeletonAnimation extends StatefulWidget {
   _SkeletonAnimationState createState() => _SkeletonAnimationState();
 }
 
-class _SkeletonAnimationState extends State<SkeletonAnimation>
-    with SingleTickerProviderStateMixin {
+class _SkeletonAnimationState extends State<SkeletonAnimation> with SingleTickerProviderStateMixin {
   AnimationController _controller;
 
   @override

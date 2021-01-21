@@ -33,15 +33,13 @@ class MyApp extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: <Widget>[
                         SkeletonAnimation(
-                          shimmerColor:
-                              index % 2 != 0 ? Colors.grey : Colors.white54,
+                          shimmerColor: index % 2 != 0 ? Colors.grey : Colors.white54,
                           borderRadius: BorderRadius.circular(32),
                           child: Container(
                             width: 70.0,
                             height: 70.0,
                             decoration: BoxDecoration(
-                                color: Colors.grey[300],
-                                borderRadius: BorderRadius.circular(32)),
+                                color: Colors.grey[300], borderRadius: BorderRadius.circular(32)),
                           ),
                         ),
                         Column(
@@ -50,17 +48,13 @@ class MyApp extends StatelessWidget {
                           mainAxisSize: MainAxisSize.max,
                           children: <Widget>[
                             Padding(
-                              padding: const EdgeInsets.only(
-                                  left: 15.0, bottom: 5.0),
+                              padding: const EdgeInsets.only(left: 15.0, bottom: 5.0),
                               child: SkeletonAnimation(
                                 borderRadius: BorderRadius.circular(10.0),
-                                shimmerColor: index % 2 != 0
-                                    ? Colors.grey
-                                    : Colors.white54,
+                                shimmerColor: index % 2 != 0 ? Colors.grey : Colors.white54,
                                 child: Container(
                                   height: 15,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.6,
+                                  width: MediaQuery.of(context).size.width * 0.6,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10.0),
                                       color: Colors.grey[300]),
@@ -73,15 +67,12 @@ class MyApp extends StatelessWidget {
                                 padding: const EdgeInsets.only(right: 5.0),
                                 child: SkeletonAnimation(
                                   borderRadius: BorderRadius.circular(10.0),
-                                  shimmerColor: index % 2 != 0
-                                      ? Colors.grey
-                                      : Colors.white54,
+                                  shimmerColor: index % 2 != 0 ? Colors.grey : Colors.white54,
                                   child: Container(
                                     width: 60,
                                     height: 13,
                                     decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(10.0),
+                                        borderRadius: BorderRadius.circular(10.0),
                                         color: Colors.grey[300]),
                                   ),
                                 ),
