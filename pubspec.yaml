@@ -1,6 +1,6 @@
 name: skeleton_text
 description: A package that provides an easy way to add skeleton text loading animation in Flutter project. This project is a part of 101Loop community.
-version: 2.0.0
+version: 2.0.1
 homepage: https://github.com/101Loop/Skeleton-Text
 
 environment:

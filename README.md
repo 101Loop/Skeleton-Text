@@ -9,7 +9,7 @@ A package provides an easy way to add skeleton text loading animation in Flutter
 ## Dependency 
 ```
 dependencies:
-  skeleton_text:
+  skeleton_text: ^2.0.1
 ```
  
 ## How To Use  

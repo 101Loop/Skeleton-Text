@@ -1,3 +1,6 @@
+## [2.0.1] - 2021-01-22
+* Fixed README
+
 ## [2.0.0] - 2021-01-22
 * Added shimmer clipping feature.
 * Added new example.
