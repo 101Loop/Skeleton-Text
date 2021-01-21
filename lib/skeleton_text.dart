@@ -13,15 +13,17 @@ class SkeletonAnimation extends StatefulWidget {
   final Color gradientColor;
   final Curve curve;
   final BorderRadiusGeometry borderRadius;
+  final int shimmerDuration;
 
-  SkeletonAnimation(
-      {@required this.child,
-      this.shimmerColor = Colors.white54,
-      this.gradientColor = const Color.fromARGB(0, 244, 244, 244),
-      this.curve = Curves.fastOutSlowIn,
-      this.borderRadius = const BorderRadius.all(Radius.circular(0)),
-      Key key})
-      : super(key: key);
+  SkeletonAnimation({
+    @required this.child,
+    this.shimmerColor = Colors.white54,
+    this.gradientColor = const Color.fromARGB(0, 244, 244, 244),
+    this.curve = Curves.fastOutSlowIn,
+    this.borderRadius = const BorderRadius.all(Radius.circular(0)),
+    this.shimmerDuration = 1000,
+    Key key,
+  }) : super(key: key);
 
   @override
   _SkeletonAnimationState createState() => _SkeletonAnimationState();
@@ -36,7 +38,7 @@ class _SkeletonAnimationState extends State<SkeletonAnimation> with SingleTicker
 
     _controller = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 1000),
+      duration: Duration(milliseconds: widget.shimmerDuration),
     );
 
     _controller.repeat();
@@ -48,36 +50,47 @@ class _SkeletonAnimationState extends State<SkeletonAnimation> with SingleTicker
     super.dispose();
   }
 
+  E firstOrNull<E>(Iterable<DiagnosticsNode> list) {
+    return list == null || list.isEmpty ? null : list.first.value;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: <Widget>[
         widget.child,
         Positioned.fill(
+          child: Container(
+            color: Colors.transparent,
+            margin: firstOrNull(widget.child.toDiagnosticsNode().getProperties().where((element) => element.name == "margin")),
             child: ClipRRect(
-          borderRadius: widget.borderRadius,
-          child: AnimatedBuilder(
-            animation: _controller,
-            builder: (BuildContext context, Widget child) {
-              return FractionallySizedBox(
-                widthFactor: .2,
-                alignment: AlignmentGeometryTween(
-                  begin: Alignment(-1.0 - .2 * 3, .0),
-                  end: Alignment(1.0 + .2 * 3, .0),
-                ).chain(CurveTween(curve: widget.curve)).evaluate(_controller),
-                child: child,
-              );
-            },
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(colors: [
-                  widget.gradientColor,
-                  widget.shimmerColor,
-                ]),
+              borderRadius: widget.borderRadius,
+              child: AnimatedBuilder(
+                animation: _controller,
+                builder: (BuildContext context, Widget child) {
+                  return FractionallySizedBox(
+                    widthFactor: .2,
+                    alignment: AlignmentGeometryTween(
+                      begin: Alignment(-1.0 - .2 * 3, .0),
+                      end: Alignment(1.0 + .2 * 3, .0),
+                    ).chain(CurveTween(curve: widget.curve)).evaluate(_controller),
+                    child: child,
+                  );
+                },
+                child: DecoratedBox(
+                  decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [
+                        widget.gradientColor,
+                        widget.shimmerColor,
+                      ],
+                    ),
+                  ),
+                ),
               ),
             ),
           ),
-        ))
+        )
       ],
     );
   }

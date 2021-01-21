@@ -10,5 +10,5 @@ ios/Flutter/Generated.xcconfig
 ios/Runner/GeneratedPluginRegistrant.*
 
 .idea/
-example/pubspec.lock
+*.lock
 .vscode/
