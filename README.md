@@ -19,7 +19,7 @@ dependencies:
   import 'package:skeleton_text/skeleton_text.dart';
   ```
 
-> To achieve the above example (second) animation use the following code :
+> To achieve the above example animation use the following code :
 
      ListView.builder(
        scrollDirection: Axis.vertical,
