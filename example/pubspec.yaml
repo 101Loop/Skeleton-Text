@@ -14,13 +14,12 @@ dependencies:
   skeleton_text:
     path: ..
 
-  cupertino_icons: ^0.1.2
+  cupertino_icons: ^0.1.3
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   test:
-
 
 flutter:
   uses-material-design: true

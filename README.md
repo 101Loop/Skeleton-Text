@@ -3,7 +3,7 @@
 A package provides an easy way to add skeleton text loading animation in Flutter project  
   
 <p>
-  <img src="https://github.com/imlegend19/Skeleton-Text/blob/master/preview2.gif" height="50%" width="50%" />
+  <img src="assets/preview2.gif" height="50%" width="50%" />
 </p>
  
 ## Dependency 
@@ -14,7 +14,6 @@ dependencies:
  
 ## How To Use  
   
-
   ```
   import 'package:skeleton_text/skeleton_text.dart';
   ```

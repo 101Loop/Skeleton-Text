@@ -1,3 +1,8 @@
+## [2.0.0] - 2021-01-22
+* Added shimmer clipping feature.
+* Added new example.
+* Shimmer animation speed is now customizable.
+
 ## [1.0.0] - 2019-04-19
 * Added Example Project.
 * The package is now stable enough.
