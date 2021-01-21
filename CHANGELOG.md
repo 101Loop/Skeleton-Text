@@ -1,3 +1,6 @@
+## [2.0.2] - 2021-01-22
+* Added preview GIF.
+
 ## [2.0.1] - 2021-01-22
 * Fixed README
 
