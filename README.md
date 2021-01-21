@@ -2,9 +2,10 @@
   
 A package provides an easy way to add skeleton text loading animation in Flutter project  
   
-<p>  
- <img src="https://github.com/imlegend19/Skeleton-Text/blob/master/skeleton_text.gif?raw=true"/>
-</p>  
+<p float="left">
+  <img src="https://github.com/imlegend19/Skeleton-Text/blob/master/preview1.gif" />
+  <img src="https://github.com/imlegend19/Skeleton-Text/blob/master/preview2.gif" />
+</p>
  
 ## Dependency 
 ```
@@ -19,7 +20,7 @@ dependencies:
   import 'package:skeleton_text/skeleton_text.dart';
   ```
 
-> To achieve the above example animation use the following code :
+> To achieve the above example (second) animation use the following code :
 
      ListView.builder(
        scrollDirection: Axis.vertical,
@@ -120,6 +121,3 @@ I have created a List builder of 5 Containers. Wrapping any widget by SkeletonAn
       Key key,
     })
 ```
-
-The above example uses default value for `shimmerColor` and `gradientColor`.
-
