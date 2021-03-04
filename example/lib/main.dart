@@ -4,7 +4,7 @@ import 'package:skeleton_text/skeleton_text.dart';
 void main() => runApp(MyApp());
 
 List<BoxShadow> shadowList = [
-  BoxShadow(color: Colors.grey[300], blurRadius: 30, offset: Offset(0, 10))
+  BoxShadow(color: Colors.grey[300]!, blurRadius: 30, offset: Offset(0, 10))
 ];
 
 class MyApp extends StatelessWidget {

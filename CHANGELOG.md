@@ -1,3 +1,6 @@
+## [3.0.0] - 2021-03-03
+* Upgraded to Flutter 2.0 with full sound null-safety support
+
 ## [2.0.2] - 2021-01-22
 * Added preview GIF.
 
