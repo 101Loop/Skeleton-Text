@@ -16,21 +16,22 @@ class SkeletonAnimation extends StatefulWidget {
   final int shimmerDuration;
 
   SkeletonAnimation({
-    @required this.child,
+    required this.child,
     this.shimmerColor = Colors.white54,
     this.gradientColor = const Color.fromARGB(0, 244, 244, 244),
     this.curve = Curves.fastOutSlowIn,
     this.borderRadius = const BorderRadius.all(Radius.circular(0)),
     this.shimmerDuration = 1000,
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   _SkeletonAnimationState createState() => _SkeletonAnimationState();
 }
 
-class _SkeletonAnimationState extends State<SkeletonAnimation> with SingleTickerProviderStateMixin {
-  AnimationController _controller;
+class _SkeletonAnimationState extends State<SkeletonAnimation>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _controller;
 
   @override
   void initState() {
@@ -50,9 +51,8 @@ class _SkeletonAnimationState extends State<SkeletonAnimation> with SingleTicker
     super.dispose();
   }
 
-  E firstOrNull<E>(Iterable<DiagnosticsNode> list) {
-    return list == null || list.isEmpty ? null : list.first.value;
-  }
+  E? firstOrNull<E>(Iterable<DiagnosticsNode> list) =>
+      list.isEmpty ? null : list.first.value as E?;
 
   @override
   Widget build(BuildContext context) {
@@ -62,18 +62,23 @@ class _SkeletonAnimationState extends State<SkeletonAnimation> with SingleTicker
         Positioned.fill(
           child: Container(
             color: Colors.transparent,
-            margin: firstOrNull(widget.child.toDiagnosticsNode().getProperties().where((element) => element.name == "margin")),
+            margin: firstOrNull(widget.child
+                .toDiagnosticsNode()
+                .getProperties()
+                .where((element) => element.name == "margin")),
             child: ClipRRect(
-              borderRadius: widget.borderRadius,
+              borderRadius: widget.borderRadius as BorderRadius?,
               child: AnimatedBuilder(
                 animation: _controller,
-                builder: (BuildContext context, Widget child) {
+                builder: (BuildContext context, Widget? child) {
                   return FractionallySizedBox(
                     widthFactor: .2,
                     alignment: AlignmentGeometryTween(
                       begin: Alignment(-1.0 - .2 * 3, .0),
                       end: Alignment(1.0 + .2 * 3, .0),
-                    ).chain(CurveTween(curve: widget.curve)).evaluate(_controller),
+                    )
+                        .chain(CurveTween(curve: widget.curve))
+                        .evaluate(_controller)!,
                     child: child,
                   );
                 },
