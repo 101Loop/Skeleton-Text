@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:skeleton_text/skeleton_text.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 List<BoxShadow> shadowList = [
-  BoxShadow(color: Colors.grey[300]!, blurRadius: 30, offset: Offset(0, 10))
+  BoxShadow(
+      color: Colors.grey[300]!, blurRadius: 30, offset: const Offset(0, 10))
 ];
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -20,12 +23,12 @@ class MyApp extends StatelessWidget {
         backgroundColor: Colors.black54,
         body: ListView.builder(
           scrollDirection: Axis.vertical,
-          physics: BouncingScrollPhysics(),
+          physics: const BouncingScrollPhysics(),
           itemCount: 5,
           itemBuilder: (BuildContext context, int index) {
             return Container(
               height: 240,
-              margin: EdgeInsets.symmetric(horizontal: 20),
+              margin: const EdgeInsets.symmetric(horizontal: 20),
               child: Row(
                 children: [
                   Expanded(
@@ -39,17 +42,17 @@ class MyApp extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20),
                           boxShadow: shadowList,
                         ),
-                        margin: EdgeInsets.only(top: 40),
+                        margin: const EdgeInsets.only(top: 40),
                       ),
                     ),
                   ),
                   Expanded(
                     child: Container(
-                      margin: EdgeInsets.only(top: 60, bottom: 20),
+                      margin: const EdgeInsets.only(top: 60, bottom: 20),
                       decoration: BoxDecoration(
                         color: Colors.grey,
                         boxShadow: shadowList,
-                        borderRadius: BorderRadius.only(
+                        borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(20),
                           bottomRight: Radius.circular(20),
                         ),
