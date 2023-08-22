@@ -67,7 +67,7 @@ class _SkeletonAnimationState extends State<SkeletonAnimation>
                 .getProperties()
                 .where((element) => element.name == "margin")),
             child: ClipRRect(
-              borderRadius: widget.borderRadius as BorderRadius?,
+              borderRadius: widget.borderRadius,
               child: AnimatedBuilder(
                 animation: _controller,
                 builder: (BuildContext context, Widget? child) {
