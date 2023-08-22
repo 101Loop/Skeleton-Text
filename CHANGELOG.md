@@ -1,3 +1,6 @@
+## [3.0.1] - 2023-08-22
+* Fix issue where BorderRadius? can't be nullable
+
 ## [3.0.0] - 2021-03-03
 * Upgraded to Flutter 2.0 with full sound null-safety support
 
